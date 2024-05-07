@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AwesomeProject1",
-    "slug": "AwesomeProject1",
+    "name": "AppOwe",
+    "slug": "AppOwe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rahmlad.AppOwe"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "317edd27-bc7f-4d87-8cd4-954eb89941e7"
+      }
     }
   }
 }
