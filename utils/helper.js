@@ -27,7 +27,6 @@ export const shareProverb = async (proverb) => {
   }
 };
 
-const HUGGINGFACE_API_KEY = "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"
 const TRANSLATION_API_URL= "https://api-inference.huggingface.co/models/facebook/mbart-large-50-many-to-many-mmt"
 
 // export const translateText = async (text, targetLang) => {
