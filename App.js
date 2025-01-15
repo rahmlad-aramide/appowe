@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { useFonts } from "expo-font";
 import { Loader } from "./components/Loader";
 import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Onboarding1 from "./screens/Onboarding1";
 import Onboarding2 from "./screens/Onboarding2";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Main from "./screens/Main";
 import ProverbDetails from "./screens/ProverbDetails";
+import Search from "./screens/Search";
 import { SearchProvider } from "./contexts/SearchContext";
 import { HistoryProvider } from "./contexts/HistoryContext";
 import { FavoritesProvider } from "./contexts/FavoriteContext";
@@ -55,6 +56,10 @@ export default function App() {
               <Stack.Screen
                 name="ProverbDetails"
                 component={ProverbDetails}
+              ></Stack.Screen>
+              <Stack.Screen
+                name="Search"
+                component={Search}
               ></Stack.Screen>
             </Stack.Navigator>
           </NavigationContainer>

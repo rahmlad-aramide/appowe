@@ -1,8 +1,20 @@
-import { ImageBackground, SafeAreaView, ScrollView, Text } from "react-native";
+import { ImageBackground, Linking, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, FONT, icons } from "../constants";
 import { StatusBar } from "expo-status-bar";
 
 const About = () => {
+  const openLink = async (url) => {
+    try {
+      const supported = await Linking.canOpenURL(url);
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Can't handle URL: ${url}`);
+      }
+    } catch (error) {
+      Alert.alert('An error occurred', error.message);
+    }
+  };
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <ScrollView style={{ flex: 1 }}>
@@ -59,6 +71,21 @@ const About = () => {
             visiting Yoruba-speaking regions, thus improving communication and
             cultural exchange.
           </Text>
+          <View style={{ flex: 1, flexDirection: 'column' }}>
+            <Text>
+              Developed by{' '}
+              <Text 
+                style={{ 
+                  color: 'blue',
+                  textDecorationLine: 'underline' 
+                }} 
+                onPress={() => openLink('https://abdrahman-oladimeji.web.app')}
+              >
+                Abdrahman Adebayo Oladimeji (Rahmlad)
+              </Text>{' '}
+              ©️ 2024
+            </Text>
+          </View>
         </ImageBackground>
       </ScrollView>
     </SafeAreaView>

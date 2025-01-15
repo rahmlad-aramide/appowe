@@ -139,16 +139,8 @@ export default function ProverbDetails({ route }) {
           <View style={styles.dropdownContainer}>
             <RNPickerSelect
               useNativeAndroidPickerStyle={false}
-              placeholder={{ label: "Language", value: null }}
+              placeholder={{ label: "Select Language", value: null }}
               style={styles.pickerStyle}
-              Icon={() => {
-                return (
-                  <Image
-                    source={icons.arrowDown}
-                    style={{ resizeMode: "contain", height: 24 }}
-                  />
-                );
-              }}
               onValueChange={(value) => {
                 setLanguage(value);
               }}
@@ -214,7 +206,7 @@ export default function ProverbDetails({ route }) {
             style={styles.translateButton}
           >
             {language === null ? (
-              <Text>Select a language</Text>
+              <Text>Translate Proverb</Text>
             ) : (
               <Text>
                 {translating ? (
@@ -283,7 +275,7 @@ const styles = StyleSheet.create({
   pickerStyle: {
     inputAndroid: {
       backgroundColor: COLORS.primary,
-      width: 120,
+      width: 'auto',
       borderRadius: 10,
       paddingVertical: 6,
       paddingHorizontal: 12,
@@ -292,10 +284,11 @@ const styles = StyleSheet.create({
       color: COLORS.black,
       fontFamily: FONT.osBold,
       fontSize: 12,
+      height: 40
     },
     iconContainer: {
-      top: 24,
-      left: 78,
+      marginTop: 16,
+      height: 40,
     },
     placeholder: {
       color: COLORS.black,
