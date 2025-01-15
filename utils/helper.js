@@ -1,4 +1,5 @@
 import {Alert, Share} from 'react-native';
+import {HUGGINGFACE_API_KEY} from '@env';
 
 export const shareProverb = async (proverb) => {
   const shareMessage = `
@@ -27,50 +28,10 @@ export const shareProverb = async (proverb) => {
   }
 };
 // To be switched to .env variables
-const HUGGINGFACE_API_KEY = "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"
+
+const apiKey = __DEV__ ? HUGGINGFACE_API_KEY : process.env.HUGGINGFACE_API_KEY;
 const TRANSLATION_API_URL= "https://api-inference.huggingface.co/models/facebook/mbart-large-50-many-to-many-mmt"
 
-// export const translateText = async (text, targetLang) => {
-//   try {
-//     const apiResponse = await fetch(
-//       `${TRANSLATION_API_URL}`,
-//       {
-//         method: "POST",
-//         headers: {
-//           Authorization: `Bearer ${HUGGINGFACE_API_KEY}`,
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//           inputs: text,
-//           parameters: { src_lang: 'en_XX', tgt_lang: targetLang },
-//         }),
-//       }
-//     );
-
-//     if (!apiResponse.ok) {
-//       // Improved error handling: separate JSON parsing from error message construction
-//       const errorBody = await apiResponse.json().catch(() => ({
-//         message: "Failed to parse error message" // Provide a default error message on JSON parsing failure
-//       }));
-
-//       const errorMessage = constructErrorMessage(apiResponse, errorBody);
-//       Alert.alert(errorMessage)
-//       return;
-//     }
-
-//     const data = await apiResponse.json();
-//     if (!data || !data[0] || !data[0].translation_text) {
-//       Alert.alert("Invalid translation response structure");
-//       return;
-//     }
-
-//     return data[0].translation_text;
-//   } catch (error) {
-//     // Directly throw the original error to preserve stack trace
-//     console.error("Error during translation:", error);
-//     Alert.alert("An error occurred during translation", error);
-//   }
-// };
 export const translateText = async (text, targetLang) => {
   try {
     const apiResponse = await fetch(
@@ -78,7 +39,7 @@ export const translateText = async (text, targetLang) => {
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${HUGGINGFACE_API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
