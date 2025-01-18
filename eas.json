@@ -1,18 +1,29 @@
 {
   "build": {
+    "development": {
+      "environment": "development"
+    },
     "preview": {
       "android": {
         "buildType": "apk"
-      }
+      },
+      "environment": "preview"
     },
     "preview2": {
       "android": {
         "gradleCommand": ":app:assembleRelease"
-      }
+      },
+      "environment": "preview"
     },
     "preview3": {
-      "developmentClient": true
+      "developmentClient": true,
+      "environment": "preview"
     },
-    "production": {}
+    "production": {
+      "environment": "production"
+    },
+    "my-profile": {
+      "environment": "production"
+  }
   }
 }

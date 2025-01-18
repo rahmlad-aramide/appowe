@@ -13,6 +13,7 @@ import Search from "./screens/Search";
 import { SearchProvider } from "./contexts/SearchContext";
 import { HistoryProvider } from "./contexts/HistoryContext";
 import { FavoritesProvider } from "./contexts/FavoriteContext";
+import MainStack from "./screens/MainStack";
 
 const Stack = createNativeStackNavigator();
 
@@ -52,15 +53,7 @@ export default function App() {
                 name="Onboarding2"
                 component={Onboarding2}
               ></Stack.Screen>
-              <Stack.Screen name="Main" component={Main}></Stack.Screen>
-              <Stack.Screen
-                name="ProverbDetails"
-                component={ProverbDetails}
-              ></Stack.Screen>
-              <Stack.Screen
-                name="Search"
-                component={Search}
-              ></Stack.Screen>
+              <Stack.Screen name="Main" component={MainStack}></Stack.Screen>
             </Stack.Navigator>
           </NavigationContainer>
         </FavoritesProvider>

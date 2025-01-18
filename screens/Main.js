@@ -15,7 +15,6 @@ const Drawer = createDrawerNavigator();
 
 export default function Main({ navigation }) {
   return (
-    <View style={{ flex: 1 }}>
       <Drawer.Navigator
         drawerContent={(props) => <CustomDrawerContent {...props} />}
         screenOptions={{
@@ -74,7 +73,7 @@ export default function Main({ navigation }) {
           }}
         ></Drawer.Screen>
       </Drawer.Navigator>
-    </View>
+    
   );
 }
 
