@@ -501,7 +501,7 @@ export const proverbsCatalog = [
    },
   {
     id:358,
-    proverb:"64. Aini owo ni aini awọn ọrẹ; ti o ba ni owo ni ọwọ rẹ, gbogbo aja ati ewurẹ yoo sọ pe wọn jẹ ibatan si ọ",
+    proverb:"Aini owo ni aini awọn ọrẹ; ti o ba ni owo ni ọwọ rẹ, gbogbo aja ati ewurẹ yoo sọ pe wọn jẹ ibatan si ọ",
     meaning:" Lack of money is lack of friends; if you have money at your disposal, every dog and goat will claim to be related to you",
     englishEquivalent:"When you’re wealthy, a lot of people will be loyal to you but not when you have nothing",
     details:" To advise someone on the need to be wealthy or to serve as a warning to a wealthy person that not all loyalty is true",

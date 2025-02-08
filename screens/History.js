@@ -13,7 +13,7 @@ const History = ({ navigation }) => {
   const { history } = useHistory();
 
   const handleSelectProverb = (proverb) => {
-    navigation.navigate("ProverbDetails", { proverbId: proverb.id });
+    navigation.navigate("Proverb", { proverbId: proverb.id });
   };
 
   const proverbsHistory = proverbsCatalog.filter((proverb) =>

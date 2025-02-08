@@ -4,7 +4,6 @@ import {
   Image,
   ImageBackground,
   SafeAreaView,
-  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -37,8 +36,8 @@ const Search = ({ navigation }) => {
       console.error("Navigation prop is missing");
       return;
    }
-    navigation.navigate("Proverb", { proverbId: 4 });
-    // navigation.navigate("ProverbDetails", { proverbId: proverb.id });
+    // navigation.navigate("Proverb", { proverbId: 4 });
+    navigation.navigate("Proverb", { proverbId: proverb.id });
   };
 
   const filterProverbs = (query) => {

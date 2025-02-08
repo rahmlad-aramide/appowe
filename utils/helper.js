@@ -6,8 +6,8 @@ export const shareProverb = async (proverb) => {
     Hey! I came across this insightful Yoruba proverb on AppOwe and I thought of sharing with you. 
     
     Proverb: "${proverb.proverb}"
-    Meaning: ${proverb.meaning}
-    English Equivalent: ${proverb.englishEquivalent}
+    Translation: ${proverb.meaning}
+    Explanation: ${proverb.englishEquivalent}
     
     Want to contribute or suggest more proverbs? Reach out to Abdrahman Oladimeji (Rahmlad) on WhatsApp via: https://wa.me/2349023600083?text=Hi%20Rahmlad.%0AI%20am%20interested%20in%20contributing%20to%20the%20AppOwe%20proverbs%20catalog!
     `;
@@ -27,6 +27,7 @@ export const shareProverb = async (proverb) => {
     Alert.alert("An error occured", error.message);
   }
 };
+
 // To be switched to .env variables
 
 const apiKey = __DEV__ ? HUGGINGFACE_API_KEY : process.env.HUGGINGFACE_API_KEY;
@@ -104,7 +105,7 @@ export const truncateString = (str, maxLength=50) => {
 }
 
 export const handleSelectProverb = (navigation, proverb) => {
-  navigation.navigate("ProverbDetails", { proverbId: proverb.id });
+  navigation.navigate("Proverb", { proverbId: proverb.id });
 };
 
 export const headingTranslations = {

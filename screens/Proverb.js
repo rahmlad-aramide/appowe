@@ -6,9 +6,9 @@ import {
   ImageBackground,
   ScrollView,
   SafeAreaView,
-  TouchableOpacity
+  TouchableOpacity,
+  StatusBar
  } from "react-native";
-import { StatusBar } from "expo-status-bar";
 import { COLORS, FONT, icons } from "../constants";
 import { useEffect, useState } from "react";
 import { proverbsCatalog } from "../utils/data";
@@ -43,7 +43,7 @@ const Proverb = ({ navigation, route }) => {
       const selectedProverb = proverbsCatalog.find((p) => p.id == proverbId);
   
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, paddingTop: 20 }}>
       <ScrollView style={styles.container}>
         <ImageBackground
           style={{ flex: 1 }}
@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
   },
   favoriteBtn: {
     height: 24,
+    marginLeft: -20,
   },
   shareBtn: {
     height: 24,
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     gap: 12,
-    marginBottom: 16,
+    marginVertical: 16,
   },
   content: {
     fontSize: 16,

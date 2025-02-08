@@ -10,6 +10,7 @@ import Favorites from "./Favorites";
 import About from "./About";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, FONT, icons } from "../constants";
+import Randomize from "./Randomize";
 
 const Drawer = createDrawerNavigator();
 
@@ -42,6 +43,15 @@ export default function Main({ navigation }) {
           options={{
             drawerIcon: () => (
               <Image source={icons.home} style={styles.drawerLabelIcon} />
+            ),
+          }}
+        ></Drawer.Screen>
+        <Drawer.Screen
+          name="Randomize"
+          component={Randomize}
+          options={{
+            drawerIcon: () => (
+              <Image source={icons.randomize} style={[styles.drawerLabelIcon, {height: 20}]} tintColor={COLORS.primary} />
             ),
           }}
         ></Drawer.Screen>
