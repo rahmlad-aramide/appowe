@@ -23,6 +23,7 @@ const Search = ({ navigation }) => {
   const { searchQuery, setSearchQuery } = useSearch();
   const [suggestions, setSuggestions] = useState([]);
 
+
   const handleSelectProverb = (proverb) => {
     if (!proverb || !proverb.id) {
       console.error("Invalid proverb item or missing ID:", proverb);
@@ -30,33 +31,44 @@ const Search = ({ navigation }) => {
         "Invalid proverb",
         `Invalid proverb item or missing ID ${proverb.id}`
       );
+      return;
     }
-    navigation.navigate("ProverbDetails", { proverbId: proverb.id });
+    if (!navigation) {
+      console.error("Navigation prop is missing");
+      return;
+   }
+    navigation.navigate("Proverb", { proverbId: 4 });
+    // navigation.navigate("ProverbDetails", { proverbId: proverb.id });
   };
 
   const filterProverbs = (query) => {
-    if (query && query.length > 1) {
-      const lowercasedQuery = query.toLowerCase();
-      return proverbsCatalog.filter(
-        (item) =>
-          item.proverb.toLowerCase().includes(lowercasedQuery) ||
-          item.englishEquivalent.toLowerCase().includes(lowercasedQuery)
-      );
-    } else {
-      return [];
+    if (!Array.isArray(proverbsCatalog)) {
+       console.error("proverbsCatalog is not an array:", proverbsCatalog);
+       return [];
     }
-  };
+    if (query && query.length > 1) {
+       const lowercasedQuery = query.toLowerCase();
+       return proverbsCatalog.filter(
+          (item) =>
+             item.proverb.toLowerCase().includes(lowercasedQuery) ||
+             item.englishEquivalent.toLowerCase().includes(lowercasedQuery)
+       );
+    } else {
+       return [];
+    }
+ };
+ 
 
   const ITEM_HEIGHT = 50;
-  const renderItem = useCallback(({ item }) => <MyListItem item={item} />, []);
+  const renderItem = useCallback(({ item }) => <MyListItem item={item} />, [handleSelectProverb]);
 
   const MyListItem = React.memo(function MyListItem({ item }) {
     return (
       <TouchableOpacity
-        style={({ pressed }) => [
-          styles.listItemContainer,
-          { opacity: pressed ? 0.5 : 1 },
-        ]}
+      style={{
+        ...styles.listItemContainer,
+        opacity: 1,
+     }}
         onPress={() => handleSelectProverb(item)}
       >
         <Text style={styles.listItemText}>
@@ -136,9 +148,7 @@ const Search = ({ navigation }) => {
             })}
             style={[styles.overlay]}
             ItemSeparatorComponent={() => (
-              <View style={{ height: 10, flex: 1, justifyContent: "center" }}>
-                <View style={{ height: 1, backgroundColor: COLORS.gray }} />
-              </View>
+              <View style={{ flex: 1 }} />
             )}
           />
         ) : null}

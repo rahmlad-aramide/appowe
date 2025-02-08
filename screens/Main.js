@@ -114,8 +114,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
     left: 28,
     top: "50%",
-    transform: [{ scale: 0.8 }],
-    transform: [{ translateY: "-50%" }],
+    transform: [{ translateY: -10 }],
   },
   input: {
     backgroundColor: "#ffffff60",

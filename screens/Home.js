@@ -65,7 +65,7 @@ export default function Home() {
           </View>
           {dailyProverb?.meaning ? (
             <View>
-              <Text style={styles.heading}>Meaning</Text>
+              <Text style={styles.heading}>Translation</Text>
               <Text style={styles.content}>
                 {dailyProverb?.meaning?.trim()}
               </Text>
@@ -73,7 +73,7 @@ export default function Home() {
           ) : null}
           {dailyProverb?.englishEquivalent ? (
             <View>
-              <Text style={styles.heading}>English</Text>
+              <Text style={styles.heading}>Meaning</Text>
               <Text style={styles.content}>
                 {dailyProverb?.englishEquivalent?.trim()}
               </Text>
@@ -81,7 +81,7 @@ export default function Home() {
           ) : null}
           {dailyProverb?.details ? (
             <View>
-              <Text style={styles.heading}>Details</Text>
+              <Text style={styles.heading}>Explanation</Text>
               <Text style={styles.content}>
                 {dailyProverb?.details?.trim()}
               </Text>

@@ -1682,7 +1682,6 @@ export const proverbsCatalog = [
     meaning:"The elder who escapes into his inner chamber because of forty cowries: two hundred cowries are not enough for casual spending",
     englishEquivalent:"One must act as one’s station demands",
     details:"",
-    
    },   
 ];
 

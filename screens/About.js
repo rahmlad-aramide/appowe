@@ -1,4 +1,12 @@
-import { ImageBackground, Linking, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  ImageBackground,
+  Linking,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 import { COLORS, FONT, icons } from "../constants";
 import { StatusBar } from "expo-status-bar";
 
@@ -12,7 +20,7 @@ const About = () => {
         Alert.alert(`Can't handle URL: ${url}`);
       }
     } catch (error) {
-      Alert.alert('An error occurred', error.message);
+      Alert.alert("An error occurred", error.message);
     }
   };
   return (
@@ -45,10 +53,10 @@ const About = () => {
             embedded in Yoruba proverbs, along with their English equivalents.
           </Text>
           <Text>
-            Developed using React Native, the app features multilingual support,
-            daily proverb updates, and social sharing capabilities. Also, the
-            app employs in-app local storage for personalization features like
-            favouriting proverbs and accessing previously accessed proverbs.
+            Developed using React Native, the app features daily proverb
+            updates, and social sharing capabilities. Also, the app employs
+            in-app local storage for personalization features like favouriting
+            proverbs and accessing previously accessed proverbs.
           </Text>
           <Text>
             These features make it an essential educational tool for academics,
@@ -71,18 +79,18 @@ const About = () => {
             visiting Yoruba-speaking regions, thus improving communication and
             cultural exchange.
           </Text>
-          <View style={{ flex: 1, flexDirection: 'column' }}>
+          <View style={{ flex: 1, flexDirection: "column" }}>
             <Text>
-              Developed by{' '}
-              <Text 
-                style={{ 
-                  color: 'blue',
-                  textDecorationLine: 'underline' 
-                }} 
-                onPress={() => openLink('https://abdrahman-oladimeji.web.app')}
+              Brought to you by the AppOwe Team. Developed by{" "}
+              <Text
+                style={{
+                  color: "blue",
+                  textDecorationLine: "underline",
+                }}
+                onPress={() => openLink("https://abdrahman-oladimeji.web.app")}
               >
-                Abdrahman Adebayo Oladimeji (Rahmlad)
-              </Text>{' '}
+                Abdrahman Oladimeji (Rahmlad)
+              </Text>{" "}
               ©️ 2024
             </Text>
           </View>

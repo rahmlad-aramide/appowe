@@ -1,19 +1,17 @@
-import "react-native-gesture-handler";
+import 'expo-dev-client';
+import './gesture-handler'
 import { useEffect, useState } from "react";
 import { useFonts } from "expo-font";
 import { Loader } from "./components/Loader";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import Onboarding1 from "./screens/Onboarding1";
-import Onboarding2 from "./screens/Onboarding2";
 import Main from "./screens/Main";
-import ProverbDetails from "./screens/ProverbDetails";
 import Search from "./screens/Search";
 import { SearchProvider } from "./contexts/SearchContext";
 import { HistoryProvider } from "./contexts/HistoryContext";
 import { FavoritesProvider } from "./contexts/FavoriteContext";
-import MainStack from "./screens/MainStack";
+import Proverb from './screens/Proverb';
+import Onboarding from './screens/Onboarding';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,18 +40,16 @@ export default function App() {
         <FavoritesProvider>
           <NavigationContainer>
             <Stack.Navigator
-              initialRouteName="Onboarding1"
+              initialRouteName="Onboarding"
               screenOptions={{ headerShown: false }}
             >
               <Stack.Screen
-                name="Onboarding1"
-                component={Onboarding1}
-              ></Stack.Screen>
-              <Stack.Screen
-                name="Onboarding2"
-                component={Onboarding2}
-              ></Stack.Screen>
-              <Stack.Screen name="Main" component={MainStack}></Stack.Screen>
+                name="Onboarding"
+                component={Onboarding}
+              />
+              <Stack.Screen name="Search" component={Search} />
+              <Stack.Screen name="Proverb" component={Proverb} />
+              <Stack.Screen name="Main" component={Main} />
             </Stack.Navigator>
           </NavigationContainer>
         </FavoritesProvider>

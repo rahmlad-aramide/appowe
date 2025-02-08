@@ -1,13 +1,19 @@
 {
   "build": {
     "development": {
-      "environment": "development"
+      "android": {
+        "buildType": "apk"
+      },
+      "environment": "development",
+      "developmentClient": true,
+      "distribution": "internal"
     },
     "preview": {
       "android": {
         "buildType": "apk"
       },
-      "environment": "preview"
+      "environment": "preview",
+      "distribution": "internal"
     },
     "preview2": {
       "android": {
@@ -20,7 +26,8 @@
       "environment": "preview"
     },
     "production": {
-      "environment": "production"
+      "environment": "production",
+      "autoIncrement": true
     },
     "my-profile": {
       "environment": "production"
